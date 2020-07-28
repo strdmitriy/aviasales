@@ -55,25 +55,14 @@ module.exports = {
     ]
   },
   resolve: {
+    alias: {
+      helpers: path.resolve(__dirname, "./src/helpers/"),
+      ui: path.resolve(__dirname, "./src/ui/"),
+      assets: path.resolve(__dirname, "./src/assets/")
+    },
     extensions: [".jsx", ".tsx", ".ts", ".js"]
   },
   plugins: [
-    new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: "src/index.html",
-          to: "./index.html"
-        },
-        {
-          from: "src/assets/**/*",
-          to: "./assets",
-          transformPath(targetPath, absolutePath) {
-            return targetPath.replace("src/assets", "");
-          }
-        }
-      ]
-    }),
     new HtmlWebpackPlugin({
       template: "src/index.html",
       minify: {
@@ -87,5 +76,6 @@ module.exports = {
       filename: "style-[hash].css",
       allChunks: true
     })
-  ]
+  ],
+  watch: true
 };
