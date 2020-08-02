@@ -24,7 +24,3 @@ export enum ColorType {
   grey = "#A0B0B9",
   blue = "#2196F3"
 }
-
-export enum IconTypes {
-  iconDefault = "icon-default"
-}

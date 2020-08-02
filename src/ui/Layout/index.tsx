@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { JustifyContentTypes } from "helpers/enum";
 
 interface ILayout {
-  jc: JustifyContentTypes;
+  jc?: JustifyContentTypes;
 }
 
 export const Row = styled.div<ILayout>`
