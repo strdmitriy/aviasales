@@ -1,9 +1,11 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended"
-    ],
-    "jsRules": {},
-    "rules": {},
-    "rulesDirectory": ["src/**/*"]
-}   
+  "env": {
+    "jest": true
+  },
+  "plugins": ["jest"],
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended"],
+  "jsRules": {},
+  "rules": {},
+  "rulesDirectory": ["src/**/*"]
+}

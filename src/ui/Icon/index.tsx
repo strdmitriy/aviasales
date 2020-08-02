@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import { IconTypes } from "helpers/enum";
-import ICON_DEFAULT from "assets/test.png";
 
-const ICON = {
-    'icon-default': ICON_DEFAULT
-};
+const ICON = {};
 
 const Image = styled.img<any>``;
 
