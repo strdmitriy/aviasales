@@ -1,0 +1,404 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Ticket Render Ticket 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div>
+        <div
+          class="Ticket__Container-sc-1hw9uk4-0 dwGaBn"
+        >
+          <div
+            class="Layout__Row-sc-1i5hea1-0 dnfYwh"
+          >
+            <p
+              class="Description-rarlu0-0 eOljue"
+              font-size="24px"
+              font-weight="600"
+            >
+              94,223 Р
+            </p>
+            <img
+              class="Icon__Image-sc-11x6y0b-0 fmeCBF"
+              height="36"
+              src="//pics.avs.io/99/36/S7@2x.png"
+              width="110"
+            />
+          </div>
+          <div
+            class="Layout__Column-sc-1i5hea1-1 btXhGm"
+          >
+            <div
+              class="Segment__Container-sc-3ygirt-0 lpspAi"
+            >
+              <div
+                class="Layout__Row-sc-1i5hea1-0 cKVncK"
+              >
+                <div
+                  class="Layout__Column-sc-1i5hea1-1 btXhGm"
+                >
+                  <p
+                    class="Description-rarlu0-0 fnwnAK"
+                    font-size="12px"
+                    font-weight="600"
+                  >
+                    MOW - HKT
+                  </p>
+                  <p
+                    class="Description-rarlu0-0 eLOmnN"
+                    font-size="14px"
+                    font-weight="600"
+                  >
+                    01:44 - 05:44
+                  </p>
+                </div>
+              </div>
+              <div
+                class="Layout__Row-sc-1i5hea1-0 cKVncK"
+              >
+                <div
+                  class="Layout__Column-sc-1i5hea1-1 btXhGm"
+                >
+                  <p
+                    class="Description-rarlu0-0 fnwnAK"
+                    font-size="12px"
+                    font-weight="600"
+                  >
+                    В Пути
+                  </p>
+                  <p
+                    class="Description-rarlu0-0 eLOmnN"
+                    font-size="14px"
+                    font-weight="600"
+                  >
+                    16ч 0м
+                  </p>
+                </div>
+              </div>
+              <div
+                class="Layout__Row-sc-1i5hea1-0 cKVncK"
+              >
+                <div
+                  class="Layout__Column-sc-1i5hea1-1 btXhGm"
+                >
+                  <p
+                    class="Description-rarlu0-0 fnwnAK"
+                    font-size="12px"
+                    font-weight="600"
+                  >
+                    2  Пересадки
+                  </p>
+                  <p
+                    class="Description-rarlu0-0 eLOmnN"
+                    font-size="14px"
+                    font-weight="600"
+                  >
+                    IST,
+SHA
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="Segment__Container-sc-3ygirt-0 lpspAi"
+            >
+              <div
+                class="Layout__Row-sc-1i5hea1-0 cKVncK"
+              >
+                <div
+                  class="Layout__Column-sc-1i5hea1-1 btXhGm"
+                >
+                  <p
+                    class="Description-rarlu0-0 fnwnAK"
+                    font-size="12px"
+                    font-weight="600"
+                  >
+                    HKT - MOW
+                  </p>
+                  <p
+                    class="Description-rarlu0-0 eLOmnN"
+                    font-size="14px"
+                    font-weight="600"
+                  >
+                    02:53 - 05:13
+                  </p>
+                </div>
+              </div>
+              <div
+                class="Layout__Row-sc-1i5hea1-0 cKVncK"
+              >
+                <div
+                  class="Layout__Column-sc-1i5hea1-1 btXhGm"
+                >
+                  <p
+                    class="Description-rarlu0-0 fnwnAK"
+                    font-size="12px"
+                    font-weight="600"
+                  >
+                    В Пути
+                  </p>
+                  <p
+                    class="Description-rarlu0-0 eLOmnN"
+                    font-size="14px"
+                    font-weight="600"
+                  >
+                    14ч 20м
+                  </p>
+                </div>
+              </div>
+              <div
+                class="Layout__Row-sc-1i5hea1-0 cKVncK"
+              >
+                <div
+                  class="Layout__Column-sc-1i5hea1-1 btXhGm"
+                >
+                  <p
+                    class="Description-rarlu0-0 fnwnAK"
+                    font-size="12px"
+                    font-weight="600"
+                  >
+                    3  Пересадки
+                  </p>
+                  <p
+                    class="Description-rarlu0-0 eLOmnN"
+                    font-size="14px"
+                    font-weight="600"
+                  >
+                    KUL,
+BKK,
+SIN
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div>
+      <div
+        class="Ticket__Container-sc-1hw9uk4-0 dwGaBn"
+      >
+        <div
+          class="Layout__Row-sc-1i5hea1-0 dnfYwh"
+        >
+          <p
+            class="Description-rarlu0-0 eOljue"
+            font-size="24px"
+            font-weight="600"
+          >
+            94,223 Р
+          </p>
+          <img
+            class="Icon__Image-sc-11x6y0b-0 fmeCBF"
+            height="36"
+            src="//pics.avs.io/99/36/S7@2x.png"
+            width="110"
+          />
+        </div>
+        <div
+          class="Layout__Column-sc-1i5hea1-1 btXhGm"
+        >
+          <div
+            class="Segment__Container-sc-3ygirt-0 lpspAi"
+          >
+            <div
+              class="Layout__Row-sc-1i5hea1-0 cKVncK"
+            >
+              <div
+                class="Layout__Column-sc-1i5hea1-1 btXhGm"
+              >
+                <p
+                  class="Description-rarlu0-0 fnwnAK"
+                  font-size="12px"
+                  font-weight="600"
+                >
+                  MOW - HKT
+                </p>
+                <p
+                  class="Description-rarlu0-0 eLOmnN"
+                  font-size="14px"
+                  font-weight="600"
+                >
+                  01:44 - 05:44
+                </p>
+              </div>
+            </div>
+            <div
+              class="Layout__Row-sc-1i5hea1-0 cKVncK"
+            >
+              <div
+                class="Layout__Column-sc-1i5hea1-1 btXhGm"
+              >
+                <p
+                  class="Description-rarlu0-0 fnwnAK"
+                  font-size="12px"
+                  font-weight="600"
+                >
+                  В Пути
+                </p>
+                <p
+                  class="Description-rarlu0-0 eLOmnN"
+                  font-size="14px"
+                  font-weight="600"
+                >
+                  16ч 0м
+                </p>
+              </div>
+            </div>
+            <div
+              class="Layout__Row-sc-1i5hea1-0 cKVncK"
+            >
+              <div
+                class="Layout__Column-sc-1i5hea1-1 btXhGm"
+              >
+                <p
+                  class="Description-rarlu0-0 fnwnAK"
+                  font-size="12px"
+                  font-weight="600"
+                >
+                  2  Пересадки
+                </p>
+                <p
+                  class="Description-rarlu0-0 eLOmnN"
+                  font-size="14px"
+                  font-weight="600"
+                >
+                  IST,
+SHA
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="Segment__Container-sc-3ygirt-0 lpspAi"
+          >
+            <div
+              class="Layout__Row-sc-1i5hea1-0 cKVncK"
+            >
+              <div
+                class="Layout__Column-sc-1i5hea1-1 btXhGm"
+              >
+                <p
+                  class="Description-rarlu0-0 fnwnAK"
+                  font-size="12px"
+                  font-weight="600"
+                >
+                  HKT - MOW
+                </p>
+                <p
+                  class="Description-rarlu0-0 eLOmnN"
+                  font-size="14px"
+                  font-weight="600"
+                >
+                  02:53 - 05:13
+                </p>
+              </div>
+            </div>
+            <div
+              class="Layout__Row-sc-1i5hea1-0 cKVncK"
+            >
+              <div
+                class="Layout__Column-sc-1i5hea1-1 btXhGm"
+              >
+                <p
+                  class="Description-rarlu0-0 fnwnAK"
+                  font-size="12px"
+                  font-weight="600"
+                >
+                  В Пути
+                </p>
+                <p
+                  class="Description-rarlu0-0 eLOmnN"
+                  font-size="14px"
+                  font-weight="600"
+                >
+                  14ч 20м
+                </p>
+              </div>
+            </div>
+            <div
+              class="Layout__Row-sc-1i5hea1-0 cKVncK"
+            >
+              <div
+                class="Layout__Column-sc-1i5hea1-1 btXhGm"
+              >
+                <p
+                  class="Description-rarlu0-0 fnwnAK"
+                  font-size="12px"
+                  font-weight="600"
+                >
+                  3  Пересадки
+                </p>
+                <p
+                  class="Description-rarlu0-0 eLOmnN"
+                  font-size="14px"
+                  font-weight="600"
+                >
+                  KUL,
+BKK,
+SIN
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -31,10 +31,6 @@ module.exports = {
         use: ["style-loader", "css-loader"]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"]
-      },
-      {
         test: /\.(svg|woff|woff2|ttf|eot|otf)([\?]?.*)$/,
         loader: "file-loader?name=assets/fonts/[name].[ext]"
       },
@@ -55,12 +51,13 @@ module.exports = {
     ]
   },
   resolve: {
+    extensions: [".jsx", ".tsx", ".ts", ".js"],
+    modules: ['node_modules', path.resolve(__dirname, 'src')],
     alias: {
       helpers: path.resolve(__dirname, "./src/helpers/"),
       ui: path.resolve(__dirname, "./src/ui/"),
       assets: path.resolve(__dirname, "./src/assets/")
-    },
-    extensions: [".jsx", ".tsx", ".ts", ".js"]
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
