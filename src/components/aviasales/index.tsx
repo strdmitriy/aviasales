@@ -9,6 +9,7 @@ import {
     MarginTypes,
     FontSizeTypes,
     ColorType,
+    WeightTypes,
 } from 'helpers/enum'
 import {
     ITickets,
@@ -84,6 +85,31 @@ const CustomTab: React.FC<ICustomTab> = ({ children, ...props }) => {
     )
 }
 
+interface IRenderTickets {
+    filteredTickets: ITickets[]
+    sortMethod: (filteredTickets: ITickets[]) => ITickets[] | []
+}
+
+const IRenderTickets: React.FC<IRenderTickets> = ({
+    filteredTickets,
+    sortMethod,
+}): React.ReactElement => {
+    if (!filteredTickets.length) {
+        return (
+            <Description
+                fontSize={FontSizeTypes.l}
+                colorType={ColorType.black}
+                fontWeight={WeightTypes.w600}
+            >
+                По вашему запросу билетов не найдено
+            </Description>
+        )
+    }
+    return sortMethod(filteredTickets).map((ticket, index) => (
+        <Ticket key={`${ticket.origin}_${index}`} ticket={ticket} />
+    ))
+}
+
 interface ICustomTabList {
     children: any
 }
@@ -110,7 +136,7 @@ const Aviasales: React.FC<IAviasales> = ({ tickets }): React.ReactElement => {
     console.log(tickets)
     const [filteredTickets, setFilteredTickets] = useState<ITickets[]>([])
     const [defaultTickets, setDefaultTickets] = useState<ITickets[]>([])
-    const [checkedIds, setCheckedIds] = useState<number[]>([])
+    const [checkedIds, setCheckedIds] = useState<number[]>([1000])
 
     useEffect(() => {
         setFilteredTickets(tickets)
@@ -135,18 +161,16 @@ const Aviasales: React.FC<IAviasales> = ({ tickets }): React.ReactElement => {
                             <CustomTab>Самый быстрый</CustomTab>
                         </CustomTabList>
                         <TabPanel>
-                            {sortByPriceAscending(filteredTickets).map(
-                                (ticket, index) => (
-                                    <Ticket key={index} ticket={ticket} />
-                                )
-                            )}
+                            <IRenderTickets
+                                filteredTickets={filteredTickets}
+                                sortMethod={sortByPriceAscending}
+                            />
                         </TabPanel>
                         <TabPanel>
-                            {sortByDurationAscending(filteredTickets).map(
-                                (ticket, index) => (
-                                    <Ticket key={index} ticket={ticket} />
-                                )
-                            )}
+                            <IRenderTickets
+                                filteredTickets={filteredTickets}
+                                sortMethod={sortByDurationAscending}
+                            />
                         </TabPanel>
                     </Tabs>
                 </Column>

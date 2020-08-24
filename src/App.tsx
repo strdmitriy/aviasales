@@ -3,7 +3,7 @@ import { GlobalStyle } from './theme/globalStyle'
 import { request } from 'helpers/Request'
 import { Aviasales } from 'components/aviasales'
 import { ErrorModule } from 'components/ErrorModule'
-import { ITickets } from './components/aviasales/helpers'
+import { ITickets } from './components/Aviasales/helpers'
 
 interface IAppState {
     tickets: ITickets[]
