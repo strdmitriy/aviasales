@@ -133,7 +133,6 @@ interface IAviasales {
 }
 
 const Aviasales: React.FC<IAviasales> = ({ tickets }): React.ReactElement => {
-    console.log(tickets)
     const [filteredTickets, setFilteredTickets] = useState<ITickets[]>([])
     const [defaultTickets, setDefaultTickets] = useState<ITickets[]>([])
     const [checkedIds, setCheckedIds] = useState<number[]>([1000])
