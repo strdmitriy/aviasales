@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { Column, Checkbox, Description } from 'ui'
+import { Checkbox, Description } from 'ui'
 import {
     ColorType,
     FontSizeTypes,

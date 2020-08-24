@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import { request } from 'helpers/Request'
 import { Aside } from './Aside'
-import { ErrorModule } from '../ErrorModule';
 import { Ticket } from 'widgets/Ticket'
 import { Row, Column, Description, Logo } from 'ui'
 import {
@@ -17,7 +15,6 @@ import {
     filteredTicketsByStops,
     sortByPriceAscending,
     sortByDurationAscending,
-    fetchData
 } from './helpers'
 
 const Container = styled.div`
@@ -105,35 +102,24 @@ CustomTabList.tabsRole = 'TabList'
 //@ts-ignore
 CustomTab.tabsRole = 'Tab'
 
+interface IAviasales {
+    tickets: ITickets[]
+}
 
-
-const Aviasales: React.FC<any> = ({}): any => {
-    const [tickets, setTickets] = useState<ITickets[]>([])
+const Aviasales: React.FC<IAviasales> = ({ tickets }): React.ReactElement => {
+    console.log(tickets)
+    const [filteredTickets, setFilteredTickets] = useState<ITickets[]>([])
     const [defaultTickets, setDefaultTickets] = useState<ITickets[]>([])
-    const [errors, setErrors] = useState<{status: string}>({status: ''})
     const [checkedIds, setCheckedIds] = useState<number[]>([])
 
     useEffect(() => {
-        setTickets(filteredTicketsByStops(checkedIds, defaultTickets))
-    }, [checkedIds])
+        setFilteredTickets(tickets)
+        setDefaultTickets(tickets)
+    }, [tickets])
 
     useEffect(() => {
-        const fetch = async () => {
-            try {
-                const response = await fetchData();
-                const sliceTicket = response.tickets.slice(0, 6);
-                setTickets(sliceTicket)
-                setDefaultTickets(sliceTicket)
-            } catch(e) {
-                setErrors({ status: '500'});
-            }
-        }
-        fetch();
-    }, [])
-    
-    if (errors.status) {
-        return <ErrorModule status={errors.status}/>
-    }
+        setFilteredTickets(filteredTicketsByStops(checkedIds, defaultTickets))
+    }, [checkedIds])
 
     return (
         <Wrapper>
@@ -149,14 +135,14 @@ const Aviasales: React.FC<any> = ({}): any => {
                             <CustomTab>Самый быстрый</CustomTab>
                         </CustomTabList>
                         <TabPanel>
-                            {sortByPriceAscending(tickets).map(
+                            {sortByPriceAscending(filteredTickets).map(
                                 (ticket, index) => (
                                     <Ticket key={index} ticket={ticket} />
                                 )
                             )}
                         </TabPanel>
                         <TabPanel>
-                            {sortByDurationAscending(tickets).map(
+                            {sortByDurationAscending(filteredTickets).map(
                                 (ticket, index) => (
                                     <Ticket key={index} ticket={ticket} />
                                 )

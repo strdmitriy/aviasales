@@ -64,7 +64,7 @@ const Checkbox: React.FC<ICheckbox> = ({ id, name, ids, onChange }) => {
 
     return (
         <Column>
-            <Input data-test={id} onChange={onHandlerChange} type="checkbox" id={id} checked={isChecked(id)} name={name} />
+            <Input data-testid={String(id)} onChange={onHandlerChange} type="checkbox" id={id} checked={isChecked(id)} name={name} />
             <Label htmlFor={String(id)}>{name}</Label>
         </Column>
     )

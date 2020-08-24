@@ -42,18 +42,3 @@ export const sortByDurationAscending = (tickets: ITickets[]) => {
         return segmentsA - segmentsB
     })
 }
-
-export const fetchToken = async (path: string) => {
-    const token = await request('get', path);
-    return token;
-}
-
-export const fetchData = async () => {
-    const token = await fetchToken('/search');
-    const { searchId } = token.data
-    const response = await request(
-        'get',
-        `/tickets?searchId=${searchId}`
-    )
-    return response.data;
-}

@@ -1,16 +1,48 @@
-import * as React from "react";
-import { GlobalStyle } from "./theme/globalStyle";
-import { Aviasales } from "components/aviasales";
+import * as React from 'react'
+import { GlobalStyle } from './theme/globalStyle'
+import { request } from 'helpers/Request'
+import { Aviasales } from 'components/aviasales'
+import { ErrorModule } from 'components/ErrorModule'
+import { ITickets } from './components/aviasales/helpers'
 
-class App extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <Aviasales />
-        <GlobalStyle />
-      </React.Fragment>
-    );
-  }
+interface IAppState {
+    tickets: ITickets[]
+    errors: { status: string }
 }
 
-export default App;
+class App extends React.Component<null, IAppState> {
+    constructor() {
+        //@ts-ignore
+        super()
+        this.state = { tickets: [], errors: { status: '' } }
+    }
+
+    async componentDidMount() {
+        try {
+            const token = await request('get', '/search')
+            const { searchId } = token.data
+            const response = await request(
+                'get',
+                `/tickets?searchId=${searchId}`
+            )
+            const sliceTicket = response.data.tickets.slice(0, 6)
+            this.setState({ tickets: sliceTicket })
+        } catch (e) {
+            this.setState({ errors: { status: '500' } })
+        }
+    }
+    render() {
+        const { tickets, errors } = this.state
+        if (errors.status) {
+            return <ErrorModule status={errors.status} />
+        }
+        return (
+            <React.Fragment>
+                <Aviasales tickets={tickets} />
+                <GlobalStyle />
+            </React.Fragment>
+        )
+    }
+}
+
+export default App
