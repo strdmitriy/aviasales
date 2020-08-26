@@ -31,6 +31,7 @@ class App extends React.Component<null, IAppState> {
             this.setState({ errors: { status: '500' } })
         }
     }
+
     render() {
         const { tickets, errors } = this.state
         if (errors.status) {

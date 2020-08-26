@@ -11,7 +11,7 @@ Object {
         <input
           checked=""
           class="Checkbox__Input-acem18-0 kDEcHh"
-          data-testid="2"
+          data-testid="checkbox_2"
           id="2"
           name="2 пересадки"
           type="checkbox"
@@ -32,7 +32,7 @@ Object {
       <input
         checked=""
         class="Checkbox__Input-acem18-0 kDEcHh"
-        data-testid="2"
+        data-testid="checkbox_2"
         id="2"
         name="2 пересадки"
         type="checkbox"

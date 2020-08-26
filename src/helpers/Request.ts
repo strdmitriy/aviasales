@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios from 'axios'
 
 const METHODS: any = {
-  get: axios.get
-};
+    get: axios.get,
+}
 
 export const request = (method: string, api: string) => {
-  const basePath = "https://front-test.beta.aviasales.ru";
-  return METHODS[method](`${basePath}${api}`);
-};
+    const basePath = 'https://front-test.beta.aviasales.ru'
+    return METHODS[method](`${basePath}${api}`)
+}

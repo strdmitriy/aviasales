@@ -22,7 +22,7 @@ const Label = styled.label`
     line-height: 20px;
     display: flex;
     align-items: center;
-    color: #4A4A4A;
+    color: #4a4a4a;
     cursor: pointer;
     &:before {
         position: absolute;
@@ -32,9 +32,9 @@ const Label = styled.label`
         height: 20px;
         border-radius: 2px;
         left: -30px;
-        border: 1px solid #9ABBCE;
+        border: 1px solid #9abbce;
         top: 0;
-    };
+    }
     &:after {
         position: absolute;
         display: block;
@@ -42,20 +42,19 @@ const Label = styled.label`
         left: -25px;
         width: 12px;
         height: 8px;
-    };
+    }
 `
 
 interface ICheckbox {
-    id: number;
-    name: string;
-    ids: number[];
-    onChange: (id: number) => void;
+    id: number
+    name: string
+    ids: number[]
+    onChange: (id: number) => void
 }
 
 const Checkbox: React.FC<ICheckbox> = ({ id, name, ids, onChange }) => {
-
     const isChecked = (id: number) => {
-        return ids.includes(id);
+        return ids.includes(id)
     }
 
     const onHandlerChange = () => {
@@ -64,7 +63,14 @@ const Checkbox: React.FC<ICheckbox> = ({ id, name, ids, onChange }) => {
 
     return (
         <Column>
-            <Input data-testid={String(id)} onChange={onHandlerChange} type="checkbox" id={id} checked={isChecked(id)} name={name} />
+            <Input
+                data-testid={`checkbox_${id}`}
+                onChange={onHandlerChange}
+                type="checkbox"
+                id={id}
+                checked={isChecked(id)}
+                name={name}
+            />
             <Label htmlFor={String(id)}>{name}</Label>
         </Column>
     )

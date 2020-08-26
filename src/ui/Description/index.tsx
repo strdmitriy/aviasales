@@ -17,12 +17,12 @@ interface IDescription {
 }
 
 export const Description = styled.p<IDescription>`
-  margin: ${(props) => (props.margin ? props.margin : '0')};
-  margin-bottom: ${props => props.mb ? props.mb : '0'};
-  margin-left: ${props => props.ml ? props.ml : '0'};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '600')};
-  font-size: ${(props) => (props.fontSize ? props.fontSize : '16px')};
-  color: ${(props) => (props.colorType ? props.colorType : 'black')};
-  text-transform: ${(props) => (props.uppercase ? 'uppercase' : 'none')};
-  align-items: center;
+    margin: ${props => (props.margin ? props.margin : '0')};
+    margin-bottom: ${props => (props.mb ? props.mb : '0')};
+    margin-left: ${props => (props.ml ? props.ml : '0')};
+    font-weight: ${props => (props.fontWeight ? props.fontWeight : '600')};
+    font-size: ${props => (props.fontSize ? props.fontSize : '16px')};
+    color: ${props => (props.colorType ? props.colorType : 'black')};
+    text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
+    align-items: center;
 `
