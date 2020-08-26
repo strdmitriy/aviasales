@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import { Aside } from './Aside'
 import { Ticket } from 'widgets/Ticket'
-import { Row, Column, Description, Logo } from 'ui'
+import { Row, Column, Description, AviasalesLogo } from 'ui'
 import {
     JustifyContentTypes,
     MarginTypes,
@@ -11,12 +10,8 @@ import {
     ColorType,
     WeightTypes,
 } from 'helpers/enum'
-import {
-    ITickets,
-    filteredTicketsByStops,
-    sortByPriceAscending,
-    sortByDurationAscending,
-} from './helpers'
+import { ITickets, filteredTicketsByStops } from './helpers'
+import { tabs, tabContent } from './configTab'
 
 const Container = styled.div`
     display: flex;
@@ -38,6 +33,14 @@ const Wrapper = styled.div`
     background: #f3f7fa;
 `
 
+interface ITicketContainer {
+    isActive: boolean
+}
+
+const TicketContainer = styled(Column)<ITicketContainer>`
+    display: ${props => (props.isActive ? 'flex' : 'none')};
+`
+
 interface INewTab {
     active: boolean
 }
@@ -54,36 +57,6 @@ const NewTab = styled.div<INewTab>`
     color: ${props => (props.active ? ColorType.white : ColorType.black)};
     background: ${props => (props.active ? ColorType.blue : ColorType.white)};
 `
-
-const NewTabList = styled(TabList)`
-    margin: 0;
-    padding: 0;
-    padding-bottom: 20px;
-    list-style: none;
-`
-
-interface ICustomTab {
-    children: string
-    props?: any
-}
-
-const CustomTab: React.FC<ICustomTab> = ({ children, ...props }) => {
-    //@ts-ignore
-    const { selected } = props
-    return (
-        <Tab>
-            <NewTab active={selected}>
-                <Description
-                    fontSize={FontSizeTypes.xs}
-                    colorType={selected ? ColorType.white : ColorType.black}
-                    uppercase
-                >
-                    {children}
-                </Description>
-            </NewTab>
-        </Tab>
-    )
-}
 
 interface IRenderTickets {
     filteredTickets: ITickets[]
@@ -114,28 +87,15 @@ interface ICustomTabList {
     children: any
 }
 
-const CustomTabList: React.FC<ICustomTabList> = ({ children }) => {
-    return (
-        <NewTabList>
-            <Row>
-                <Row>{children}</Row>
-            </Row>
-        </NewTabList>
-    )
-}
-//@ts-ignore
-CustomTabList.tabsRole = 'TabList'
-//@ts-ignore
-CustomTab.tabsRole = 'Tab'
-
 interface IAviasales {
     tickets: ITickets[]
 }
 
 const Aviasales: React.FC<IAviasales> = ({ tickets }): React.ReactElement => {
-    const [filteredTickets, setFilteredTickets] = useState<ITickets[]>([])
-    const [defaultTickets, setDefaultTickets] = useState<ITickets[]>([])
+    const [filteredTickets, setFilteredTickets] = useState<ITickets[]>(tickets)
+    const [defaultTickets, setDefaultTickets] = useState<ITickets[]>(tickets)
     const [checkedIds, setCheckedIds] = useState<number[]>([1000])
+    const [tabId, setTabId] = useState<number>(0)
 
     useEffect(() => {
         setFilteredTickets(tickets)
@@ -146,32 +106,52 @@ const Aviasales: React.FC<IAviasales> = ({ tickets }): React.ReactElement => {
         setFilteredTickets(filteredTicketsByStops(checkedIds, defaultTickets))
     }, [checkedIds])
 
+    const onHandlerSelect = (id: number) => {
+        setTabId(id)
+    }
+
     return (
         <Wrapper>
             <Row jc={JustifyContentTypes.center} mb={MarginTypes.bottom_x5}>
-                <Logo />
+                <AviasalesLogo />
             </Row>
             <Container>
                 <Aside setCheckedIds={setCheckedIds} checkedIds={checkedIds} />
                 <Column noFlex>
-                    <Tabs>
-                        <CustomTabList>
-                            <CustomTab>Самый дешевый</CustomTab>
-                            <CustomTab>Самый быстрый</CustomTab>
-                        </CustomTabList>
-                        <TabPanel>
+                    <Row mb={MarginTypes.bottom_x2}>
+                        {tabs.map(({ id, name }) => (
+                            <NewTab
+                                data-testid={`tab-${id}`}
+                                key={`${id}_${name}`}
+                                active={id === tabId}
+                                onClick={() => onHandlerSelect(id)}
+                            >
+                                <Description
+                                    fontSize={FontSizeTypes.xs}
+                                    colorType={
+                                        id === tabId
+                                            ? ColorType.white
+                                            : ColorType.black
+                                    }
+                                    uppercase
+                                >
+                                    {name}
+                                </Description>
+                            </NewTab>
+                        ))}
+                    </Row>
+                    {tabContent.map(({ id, sortMethod }) => (
+                        <TicketContainer
+                            data-testid={`tickets-container-${id}`}
+                            key={`${id}_${sortMethod}`}
+                            isActive={tabId === id}
+                        >
                             <IRenderTickets
                                 filteredTickets={filteredTickets}
-                                sortMethod={sortByPriceAscending}
+                                sortMethod={sortMethod}
                             />
-                        </TabPanel>
-                        <TabPanel>
-                            <IRenderTickets
-                                filteredTickets={filteredTickets}
-                                sortMethod={sortByDurationAscending}
-                            />
-                        </TabPanel>
-                    </Tabs>
+                        </TicketContainer>
+                    ))}
                 </Column>
             </Container>
         </Wrapper>

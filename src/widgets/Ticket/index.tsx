@@ -28,6 +28,7 @@ const Container = styled.div`
 `
 
 interface ITicket {
+    id: string
     ticket: {
         price: number
         carrier: string
@@ -41,10 +42,10 @@ interface ITicket {
     }
 }
 
-const Ticket: React.FC<ITicket> = ({ ticket }) => {
+const Ticket: React.FC<ITicket> = ({ ticket, id }) => {
     const { price, carrier, segments } = ticket
     return (
-        <Container>
+        <Container data-testid="fast">
             <Row
                 jc={JustifyContentTypes.spaceBetween}
                 mb={MarginTypes.bottom_x2}
@@ -60,7 +61,10 @@ const Ticket: React.FC<ITicket> = ({ ticket }) => {
             </Row>
             <Column>
                 {segments.map((segment, index) => (
-                    <Segment key={`${segment.date}_${index}`} segment={segment} />
+                    <Segment
+                        key={`${segment.date}_${index}`}
+                        segment={segment}
+                    />
                 ))}
             </Column>
         </Container>

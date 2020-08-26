@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import logo from 'assets/logo.svg'
+import Logo from 'assets/logo.svg'
 
 const Image = styled.img<any>`
     max-height: 36px;
@@ -17,16 +17,16 @@ interface IIcon {
 const Icon: React.FC<IIcon> = ({ image }): React.ReactElement => {
     return (
         <Image
-            src={`//pics.avs.io/99/36/${image}@2x.png`}
-            srcset={`//pics.avs.io/99/36/${image}.png `}
+            src={`http://pics.avs.io/99/36/${image}@2x.png`}
+            srcset={`http://pics.avs.io/99/36/${image}.png `}
             width="110"
             height="36"
         />
     )
 }
 
-const Logo = () => {
-    return <ImageLogo src={logo}/>
+const AviasalesLogo = () => {
+    return <ImageLogo src="assets/logo.svg" />
 }
 
-export { Icon, Logo }
+export { Icon, AviasalesLogo }
