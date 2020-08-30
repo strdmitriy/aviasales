@@ -10,7 +10,12 @@ import {
     ColorType,
     WeightTypes,
 } from 'helpers/enum'
-import { ITickets, filteredTicketsByStops } from './helpers'
+import {
+    ITickets,
+    filteredTicketsByStops,
+    getColor,
+    getFilterIds,
+} from './helpers'
 import { tabs, tabContent } from './configTab'
 
 const Container = styled.div`
@@ -94,7 +99,7 @@ interface IAviasales {
 const Aviasales: React.FC<IAviasales> = ({ tickets }): React.ReactElement => {
     const [filteredTickets, setFilteredTickets] = useState<ITickets[]>(tickets)
     const [defaultTickets, setDefaultTickets] = useState<ITickets[]>(tickets)
-    const [checkedIds, setCheckedIds] = useState<number[]>([1000])
+    const [filterIds, setFilterIds] = useState<number[]>(getFilterIds())
     const [tabId, setTabId] = useState<number>(0)
 
     useEffect(() => {
@@ -103,8 +108,8 @@ const Aviasales: React.FC<IAviasales> = ({ tickets }): React.ReactElement => {
     }, [tickets])
 
     useEffect(() => {
-        setFilteredTickets(filteredTicketsByStops(checkedIds, defaultTickets))
-    }, [checkedIds])
+        setFilteredTickets(filteredTicketsByStops(filterIds, defaultTickets))
+    }, [filterIds])
 
     const onHandlerSelect = (id: number) => {
         setTabId(id)
@@ -116,7 +121,7 @@ const Aviasales: React.FC<IAviasales> = ({ tickets }): React.ReactElement => {
                 <AviasalesLogo />
             </Row>
             <Container>
-                <Aside setCheckedIds={setCheckedIds} checkedIds={checkedIds} />
+                <Aside setFilterIds={setFilterIds} filterIds={filterIds} />
                 <Column noFlex>
                     <Row mb={MarginTypes.bottom_x2}>
                         {tabs.map(({ id, name }) => (
@@ -128,11 +133,7 @@ const Aviasales: React.FC<IAviasales> = ({ tickets }): React.ReactElement => {
                             >
                                 <Description
                                     fontSize={FontSizeTypes.xs}
-                                    colorType={
-                                        id === tabId
-                                            ? ColorType.white
-                                            : ColorType.black
-                                    }
+                                    colorType={ColorType[getColor(id, tabId)]}
                                     uppercase
                                 >
                                     {name}

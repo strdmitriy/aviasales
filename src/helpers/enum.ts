@@ -40,6 +40,10 @@ export enum MarginTypes {
     bottom_x5 = '50px',
 }
 
+export enum ButtonTypes {
+  button = 'button'
+}
+
 export enum ColorType {
     black = '#4A4A4A',
     grey = '#A0B0B9',

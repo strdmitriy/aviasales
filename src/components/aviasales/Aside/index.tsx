@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Checkbox, Description } from 'ui'
+import { Checkbox, Description, Button } from 'ui'
 import {
     ColorType,
     FontSizeTypes,
     WeightTypes,
     MarginTypes,
+    ButtonTypes,
 } from 'helpers/enum'
+import { setFilteredIds } from './helpers'
 import config from '../config.json'
 
 const Container = styled.div`
@@ -23,9 +25,23 @@ const Container = styled.div`
 `
 const Wrapper = styled.div`
     padding: 10px 20px;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
     cursor: pointer;
+    ${Description} {
+        display: none;
+    }
     &:hover {
         background: #f1fcff;
+        ${Description} {
+            display: block;
+            position: absolute;
+            font-size: 10px;
+            right: 20px;
+            top: 15px;
+        }
     }
     &:last-child {
         margin-bottom: 0;
@@ -33,24 +49,34 @@ const Wrapper = styled.div`
 `
 
 interface IAside {
-    setCheckedIds: (ids: number[]) => void
-    checkedIds: number[]
+    setFilterIds: (ids: number[]) => void
+    filterIds: number[]
 }
 
 const Aside: React.FC<IAside> = ({
-    checkedIds,
-    setCheckedIds,
+    filterIds,
+    setFilterIds,
 }): React.ReactElement => {
+    const filterIdForAllTickets = 1000
+    const ids = config.map(({ id }) => id)
+
     const onHandlerChange = (id: number) => {
-        const allChecked = 1000
-        if (checkedIds.includes(id)) {
-            return setCheckedIds(checkedIds.filter(checkId => checkId !== id))
+        if (filterIds.includes(id) && id === filterIdForAllTickets) {
+            return setFilterIds([])
         }
-        if (id === allChecked) {
-            const ids = config.map(({ id }) => id)
-            return setCheckedIds(ids)
+        if (filterIds.includes(id)) {
+            const filteredIds = filterIds.filter(checkId => checkId !== id)
+            return setFilteredIds(filteredIds, setFilterIds)
         }
-        return setCheckedIds([...checkedIds, id])
+        return id === filterIdForAllTickets
+            ? setFilteredIds(ids, setFilterIds)
+            : setFilteredIds([...filterIds, id], setFilterIds)
+    }
+
+    const onHandlerClick = (id: number) => {
+        return id === filterIdForAllTickets
+            ? setFilterIds(ids)
+            : setFilterIds([id])
     }
 
     return (
@@ -70,9 +96,22 @@ const Aside: React.FC<IAside> = ({
                     <Checkbox
                         id={id}
                         name={name}
-                        ids={checkedIds}
+                        ids={filterIds}
                         onChange={onHandlerChange}
                     />
+                    <Button
+                        onClick={() => onHandlerClick(id)}
+                        type={ButtonTypes.button}
+                    >
+                        <Description
+                            colorType={ColorType.blue}
+                            fontSize={FontSizeTypes.xs}
+                            fontWeight={WeightTypes.w600}
+                            uppercase
+                        >
+                            Только
+                        </Description>
+                    </Button>
                 </Wrapper>
             ))}
         </Container>

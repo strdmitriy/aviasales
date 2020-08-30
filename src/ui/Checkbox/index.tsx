@@ -18,6 +18,7 @@ const Input = styled.input`
 const Label = styled.label`
     position: relative;
     margin-left: 30px;
+    width: 100%;
     font-size: 13px;
     line-height: 20px;
     display: flex;
@@ -28,8 +29,8 @@ const Label = styled.label`
         position: absolute;
         display: block;
         content: '';
-        width: 20px;
-        height: 20px;
+        width: 19px;
+        height: 19px;
         border-radius: 2px;
         left: -30px;
         border: 1px solid #9abbce;

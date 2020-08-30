@@ -12,7 +12,6 @@ interface IAppState {
 
 class App extends React.Component<null, IAppState> {
     constructor() {
-        //@ts-ignore
         super()
         this.state = { tickets: [], errors: { status: '' } }
     }
