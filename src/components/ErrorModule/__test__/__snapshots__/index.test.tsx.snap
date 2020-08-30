@@ -1,48 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render Checkbox 1`] = `
+exports[`Render ErrorModule 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="Layout__Column-sc-1i5hea1-1 btXhGm"
+        class="Layout__Column-sc-1i5hea1-1 ErrorModule__Wrapper-sc-10am3do-0 cAExk"
       >
-        <input
-          checked=""
-          class="Checkbox__Input-acem18-0 kDEcHh"
-          data-testid="checkbox_2"
-          id="2"
-          name="2 пересадки"
-          type="checkbox"
-        />
-        <label
-          class="Checkbox__Label-acem18-1 bXgrPl"
-          for="2"
+        <p
+          class="Description-rarlu0-0 hQAroG"
+          font-size="24px"
         >
-          2 пересадки
-        </label>
+          Что-то пошло не так...
+        </p>
+        <p
+          class="Description-rarlu0-0 eLOmnN"
+          font-size="14px"
+        >
+          Статус: 500
+        </p>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="Layout__Column-sc-1i5hea1-1 btXhGm"
+      class="Layout__Column-sc-1i5hea1-1 ErrorModule__Wrapper-sc-10am3do-0 cAExk"
     >
-      <input
-        checked=""
-        class="Checkbox__Input-acem18-0 kDEcHh"
-        data-testid="checkbox_2"
-        id="2"
-        name="2 пересадки"
-        type="checkbox"
-      />
-      <label
-        class="Checkbox__Label-acem18-1 bXgrPl"
-        for="2"
+      <p
+        class="Description-rarlu0-0 hQAroG"
+        font-size="24px"
       >
-        2 пересадки
-      </label>
+        Что-то пошло не так...
+      </p>
+      <p
+        class="Description-rarlu0-0 eLOmnN"
+        font-size="14px"
+      >
+        Статус: 500
+      </p>
     </div>
   </div>,
   "debug": [Function],

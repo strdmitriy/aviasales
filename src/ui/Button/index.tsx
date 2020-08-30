@@ -16,11 +16,12 @@ interface IButton {
     children: React.ReactElement | string
     type: ButtonTypes
     onClick: (...arg: any) => void
+    dataTestId?: string
 }
 
-const Button: React.FC<IButton> = ({ children, type, onClick }) => {
+const Button: React.FC<IButton> = ({ children, type, onClick, dataTestId }) => {
     return (
-        <ButtonComponent onClick={onClick} type={type}>
+        <ButtonComponent data-testid={dataTestId} onClick={onClick} type={type}>
             {children}
         </ButtonComponent>
     )

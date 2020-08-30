@@ -7,7 +7,7 @@ import config from './config.json'
 describe('Aviasales', () => {
     test('Testing Aviasales Tab', () => {
         const { getByTestId } = render(<Aviasales tickets={config} />)
-        const tab2 = getByTestId('tab-1')
+        const tab1 = getByTestId('tab-1')
         const ticketContainer1 = getByTestId('tickets-container-0')
         const ticketContainer2 = getByTestId('tickets-container-1')
         expect(
@@ -20,7 +20,7 @@ describe('Aviasales', () => {
                 .getComputedStyle(ticketContainer2)
                 .getPropertyValue('display')
         ).toBe('none')
-        fireEvent.click(tab2)
+        fireEvent.click(tab1)
         expect(
             window
                 .getComputedStyle(ticketContainer1)
@@ -33,7 +33,7 @@ describe('Aviasales', () => {
         ).toBe('flex')
     })
 
-    test('Testing Aviasales Tickets', () => {
+    test('Testing Filter Aviasales Tickets', () => {
         const { getByTestId } = render(<Aviasales tickets={config} />)
         const ticketContainer1 = getByTestId('tickets-container-0')
         const stopsAll = getByTestId('checkbox_1000')
