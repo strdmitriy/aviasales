@@ -1,4 +1,4 @@
-import { request } from 'helpers/Request'
+import config from './config.json'
 
 export interface ITickets {
     price: number
@@ -41,4 +41,12 @@ export const sortByDurationAscending = (tickets: ITickets[]) => {
         const segmentsB = b.segments[0].duration + b.segments[1].duration
         return segmentsA - segmentsB
     })
+}
+
+export const getColor = (id: number, tabId: number) => {
+    return id === tabId ? 'white' : 'black'
+}
+
+export const getFilterIds = () => {
+    return config.map(({ id }) => id)
 }

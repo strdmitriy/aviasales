@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { GlobalStyle } from './theme/globalStyle'
-import { request } from 'helpers/Request'
+import { Request } from 'helpers/Request'
 import { Aviasales } from 'components/aviasales'
 import { ErrorModule } from 'components/ErrorModule'
 import { ITickets } from './components/Aviasales/helpers'
@@ -12,16 +12,15 @@ interface IAppState {
 
 class App extends React.Component<null, IAppState> {
     constructor() {
-        //@ts-ignore
         super()
         this.state = { tickets: [], errors: { status: '' } }
     }
 
     async componentDidMount() {
         try {
-            const token = await request('get', '/search')
+            const token = await Request('get', '/search')
             const { searchId } = token.data
-            const response = await request(
+            const response = await Request(
                 'get',
                 `/tickets?searchId=${searchId}`
             )

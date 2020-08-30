@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="Layout__Column-sc-1i5hea1-1 btXhGm"
+        class="Layout__Column-sc-1i5hea1-1 bHCSNB"
       >
         testing description
       </div>
@@ -14,7 +14,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="Layout__Column-sc-1i5hea1-1 btXhGm"
+      class="Layout__Column-sc-1i5hea1-1 bHCSNB"
     >
       testing description
     </div>

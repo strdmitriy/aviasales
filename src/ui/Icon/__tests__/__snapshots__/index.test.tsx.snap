@@ -8,7 +8,7 @@ Object {
       <img
         class="Icon__Image-sc-11x6y0b-0 fmeCBF"
         height="36"
-        src="//pics.avs.io/99/36/DP@2x@2x.png"
+        src="http://pics.avs.io/99/36/DP@2x@2x.png"
         width="110"
       />
     </div>
@@ -17,7 +17,7 @@ Object {
     <img
       class="Icon__Image-sc-11x6y0b-0 fmeCBF"
       height="36"
-      src="//pics.avs.io/99/36/DP@2x@2x.png"
+      src="http://pics.avs.io/99/36/DP@2x@2x.png"
       width="110"
     />
   </div>,

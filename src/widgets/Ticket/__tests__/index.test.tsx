@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 import { Ticket } from '../'
 import moment from 'moment'
 
-describe('describe inner 1', () => {
+describe('Testing converting duration', () => {
     const durationTime = moment.duration(1646, 'minutes')
 
     test('minutes', () => {

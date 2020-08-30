@@ -22,12 +22,12 @@ Object {
           <img
             class="Icon__Image-sc-11x6y0b-0 fmeCBF"
             height="36"
-            src="//pics.avs.io/99/36/S7@2x.png"
+            src="http://pics.avs.io/99/36/S7@2x.png"
             width="110"
           />
         </div>
         <div
-          class="Layout__Column-sc-1i5hea1-1 btXhGm"
+          class="Layout__Column-sc-1i5hea1-1 bHCSNB"
         >
           <div
             class="Segment__Container-sc-3ygirt-0 lpspAi"
@@ -36,7 +36,7 @@ Object {
               class="Layout__Row-sc-1i5hea1-0 cKVncK"
             >
               <div
-                class="Layout__Column-sc-1i5hea1-1 btXhGm"
+                class="Layout__Column-sc-1i5hea1-1 bHCSNB"
               >
                 <p
                   class="Description-rarlu0-0 fnwnAK"
@@ -58,7 +58,7 @@ Object {
               class="Layout__Row-sc-1i5hea1-0 cKVncK"
             >
               <div
-                class="Layout__Column-sc-1i5hea1-1 btXhGm"
+                class="Layout__Column-sc-1i5hea1-1 bHCSNB"
               >
                 <p
                   class="Description-rarlu0-0 fnwnAK"
@@ -80,7 +80,7 @@ Object {
               class="Layout__Row-sc-1i5hea1-0 cKVncK"
             >
               <div
-                class="Layout__Column-sc-1i5hea1-1 btXhGm"
+                class="Layout__Column-sc-1i5hea1-1 bHCSNB"
               >
                 <p
                   class="Description-rarlu0-0 fnwnAK"
@@ -107,7 +107,7 @@ SHA
               class="Layout__Row-sc-1i5hea1-0 cKVncK"
             >
               <div
-                class="Layout__Column-sc-1i5hea1-1 btXhGm"
+                class="Layout__Column-sc-1i5hea1-1 bHCSNB"
               >
                 <p
                   class="Description-rarlu0-0 fnwnAK"
@@ -129,7 +129,7 @@ SHA
               class="Layout__Row-sc-1i5hea1-0 cKVncK"
             >
               <div
-                class="Layout__Column-sc-1i5hea1-1 btXhGm"
+                class="Layout__Column-sc-1i5hea1-1 bHCSNB"
               >
                 <p
                   class="Description-rarlu0-0 fnwnAK"
@@ -151,7 +151,7 @@ SHA
               class="Layout__Row-sc-1i5hea1-0 cKVncK"
             >
               <div
-                class="Layout__Column-sc-1i5hea1-1 btXhGm"
+                class="Layout__Column-sc-1i5hea1-1 bHCSNB"
               >
                 <p
                   class="Description-rarlu0-0 fnwnAK"
@@ -194,12 +194,12 @@ SIN
         <img
           class="Icon__Image-sc-11x6y0b-0 fmeCBF"
           height="36"
-          src="//pics.avs.io/99/36/S7@2x.png"
+          src="http://pics.avs.io/99/36/S7@2x.png"
           width="110"
         />
       </div>
       <div
-        class="Layout__Column-sc-1i5hea1-1 btXhGm"
+        class="Layout__Column-sc-1i5hea1-1 bHCSNB"
       >
         <div
           class="Segment__Container-sc-3ygirt-0 lpspAi"
@@ -208,7 +208,7 @@ SIN
             class="Layout__Row-sc-1i5hea1-0 cKVncK"
           >
             <div
-              class="Layout__Column-sc-1i5hea1-1 btXhGm"
+              class="Layout__Column-sc-1i5hea1-1 bHCSNB"
             >
               <p
                 class="Description-rarlu0-0 fnwnAK"
@@ -230,7 +230,7 @@ SIN
             class="Layout__Row-sc-1i5hea1-0 cKVncK"
           >
             <div
-              class="Layout__Column-sc-1i5hea1-1 btXhGm"
+              class="Layout__Column-sc-1i5hea1-1 bHCSNB"
             >
               <p
                 class="Description-rarlu0-0 fnwnAK"
@@ -252,7 +252,7 @@ SIN
             class="Layout__Row-sc-1i5hea1-0 cKVncK"
           >
             <div
-              class="Layout__Column-sc-1i5hea1-1 btXhGm"
+              class="Layout__Column-sc-1i5hea1-1 bHCSNB"
             >
               <p
                 class="Description-rarlu0-0 fnwnAK"
@@ -279,7 +279,7 @@ SHA
             class="Layout__Row-sc-1i5hea1-0 cKVncK"
           >
             <div
-              class="Layout__Column-sc-1i5hea1-1 btXhGm"
+              class="Layout__Column-sc-1i5hea1-1 bHCSNB"
             >
               <p
                 class="Description-rarlu0-0 fnwnAK"
@@ -301,7 +301,7 @@ SHA
             class="Layout__Row-sc-1i5hea1-0 cKVncK"
           >
             <div
-              class="Layout__Column-sc-1i5hea1-1 btXhGm"
+              class="Layout__Column-sc-1i5hea1-1 bHCSNB"
             >
               <p
                 class="Description-rarlu0-0 fnwnAK"
@@ -323,7 +323,7 @@ SHA
             class="Layout__Row-sc-1i5hea1-0 cKVncK"
           >
             <div
-              class="Layout__Column-sc-1i5hea1-1 btXhGm"
+              class="Layout__Column-sc-1i5hea1-1 bHCSNB"
             >
               <p
                 class="Description-rarlu0-0 fnwnAK"
