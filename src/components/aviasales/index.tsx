@@ -88,10 +88,6 @@ const IRenderTickets: React.FC<IRenderTickets> = ({
     ))
 }
 
-interface ICustomTabList {
-    children: any
-}
-
 interface IAviasales {
     tickets: ITickets[]
 }
