@@ -5,6 +5,7 @@ import { Ticket } from 'widgets/Ticket'
 import { Row, Column, Description, AviasalesLogo } from 'ui'
 import {
     JustifyContentTypes,
+    AlignItemsTypes,
     MarginTypes,
     FontSizeTypes,
     ColorType,
@@ -18,22 +19,13 @@ import {
 } from './helpers'
 import { tabs, tabContent } from './configTab'
 
-const Container = styled.div`
-    display: flex;
-    width: 100%;
+const Container = styled(Row)`
     max-width: 750px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
 `
 
-const Wrapper = styled.div`
-    display: flex;
+const Wrapper = styled(Column)`
     padding-top: 50px;
     padding-bottom: 120px;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
     min-height: 100vh;
     background: #f3f7fa;
 `
@@ -112,11 +104,14 @@ const Aviasales: React.FC<IAviasales> = ({ tickets }): React.ReactElement => {
     }
 
     return (
-        <Wrapper>
+        <Wrapper jc={JustifyContentTypes.flexStart} ai={AlignItemsTypes.center}>
             <Row jc={JustifyContentTypes.center} mb={MarginTypes.bottom_x5}>
                 <AviasalesLogo />
             </Row>
-            <Container>
+            <Container
+                ai={AlignItemsTypes.flexStart}
+                jc={JustifyContentTypes.spaceBetween}
+            >
                 <Aside setFilterIds={setFilterIds} filterIds={filterIds} />
                 <Column noFlex>
                     <Row mb={MarginTypes.bottom_x2}>
