@@ -6,6 +6,7 @@ import { Ticket } from 'widgets/Ticket'
 import { Row, Column, Description, Logo } from 'ui'
 import {
     JustifyContentTypes,
+    AlignItemsTypes,
     MarginTypes,
     FontSizeTypes,
     ColorType,
@@ -18,22 +19,13 @@ import {
     sortByDurationAscending,
 } from './helpers'
 
-const Container = styled.div`
-    display: flex;
-    width: 100%;
+const Container = styled(Row)`
     max-width: 750px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
 `
 
-const Wrapper = styled.div`
-    display: flex;
+const Wrapper = styled(Column)`
     padding-top: 50px;
     padding-bottom: 120px;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
     min-height: 100vh;
     background: #f3f7fa;
 `
@@ -123,10 +115,6 @@ const CustomTabList: React.FC<ICustomTabList> = ({ children }) => {
         </NewTabList>
     )
 }
-//@ts-ignore
-CustomTabList.tabsRole = 'TabList'
-//@ts-ignore
-CustomTab.tabsRole = 'Tab'
 
 interface IAviasales {
     tickets: ITickets[]
@@ -147,11 +135,14 @@ const Aviasales: React.FC<IAviasales> = ({ tickets }): React.ReactElement => {
     }, [checkedIds])
 
     return (
-        <Wrapper>
+        <Wrapper jc={JustifyContentTypes.flexStart} ai={AlignItemsTypes.center}>
             <Row jc={JustifyContentTypes.center} mb={MarginTypes.bottom_x5}>
                 <Logo />
             </Row>
-            <Container>
+            <Container
+                ai={AlignItemsTypes.flexStart}
+                jc={JustifyContentTypes.spaceBetween}
+            >
                 <Aside setCheckedIds={setCheckedIds} checkedIds={checkedIds} />
                 <Column noFlex>
                     <Tabs>
