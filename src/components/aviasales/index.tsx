@@ -108,8 +108,10 @@ const Aviasales: React.FC<IAviasales> = ({ tickets }): React.ReactElement => {
             <Row jc={JustifyContentTypes.center} mb={MarginTypes.bottom_x5}>
                 <AviasalesLogo />
             </Row>
-            <Container ai={AlignItemsTypes.flexStart}
-                jc={JustifyContentTypes.spaceBetween}>
+            <Container
+                ai={AlignItemsTypes.flexStart}
+                jc={JustifyContentTypes.spaceBetween}
+            >
                 <Aside setFilterIds={setFilterIds} filterIds={filterIds} />
                 <Column noFlex>
                     <Row mb={MarginTypes.bottom_x2}>
