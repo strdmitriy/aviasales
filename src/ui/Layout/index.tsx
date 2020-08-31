@@ -13,7 +13,7 @@ export const Row = styled.div<ILayout>`
     flex-direction: row;
     box-sizing: border-box;
     justify-content: ${props => (props.jc ? props.jc : 'flex-start')};
-    align-items: stretch;
+    align-items: ${props => (props.ai ? props.ai : 'stretch')};
     height: auto;
     width: ${props => (props.noFlex ? 'auto' : '100%')};
     margin-bottom: ${props => (props.mb ? props.mb : '0')};

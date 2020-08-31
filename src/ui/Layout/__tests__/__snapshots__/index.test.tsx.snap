@@ -79,7 +79,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="Layout__Row-sc-1i5hea1-0 cKVncK"
+        class="Layout__Row-sc-1i5hea1-0 hJxBnF"
       >
         testing text
       </div>
@@ -87,7 +87,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="Layout__Row-sc-1i5hea1-0 cKVncK"
+      class="Layout__Row-sc-1i5hea1-0 hJxBnF"
     >
       testing text
     </div>

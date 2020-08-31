@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Checkbox, Description, Button } from 'ui'
+import { Column, Row, Checkbox, Description, Button } from 'ui'
 import {
+    AlignItemsTypes,
     ColorType,
     FontSizeTypes,
     WeightTypes,
@@ -11,24 +12,19 @@ import {
 import { setFilteredIds } from './helpers'
 import config from '../config.json'
 
-const Container = styled.div`
-    display: flex;
+const Container = styled(Column)`
     box-sizing: border-box;
     padding-top: 20px;
     padding-bottom: 12px;
     width: 230px;
-    flex-direction: column;
     max-width: 230px;
-    background: #ffffff;
+    background: ${ColorType.white};
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 `
-const Wrapper = styled.div`
+const Wrapper = styled(Row)`
     padding: 10px 20px;
-    display: flex;
     position: relative;
-    flex-direction: row;
-    align-items: center;
     cursor: pointer;
     ${Description} {
         display: none;
@@ -92,7 +88,7 @@ const Aside: React.FC<IAside> = ({
                 Количество пересадок
             </Description>
             {config.map(({ id, name }) => (
-                <Wrapper key={id}>
+                <Wrapper ai={AlignItemsTypes.center} key={id}>
                     <Checkbox
                         id={id}
                         name={name}
